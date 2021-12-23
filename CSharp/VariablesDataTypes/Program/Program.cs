@@ -34,7 +34,7 @@ namespace VariablesDataTypes
             Console.WriteLine("float : " + var_float + " double : " + var_double);
 
             object var_object = null; // 4 byte addresses, all csharp objects
-            char var_char = \u0058; // 2 bytes, 16 bits, unicode characters, any valid character, e.g. a,*, \x0058 (hex), or \u0058 (Unicode)
+            char var_char = '*'; // 2 bytes, 16 bits, unicode characters, any valid character, e.g. a,*, \x0058 (hex), or \u0058 (Unicode)
             string var_string = "string"; // 4 byte addresses, length up to 2 billion bytes
 
             Console.WriteLine("object : " + var_object + " char : " + var_char + " string : " + var_string);
@@ -44,10 +44,10 @@ namespace VariablesDataTypes
 
             Console.WriteLine("decimal : " + var_decimal + " bool : " + var_bool);
 
-            DateTime var_datetime = null; // 8 bytes, from 00:00:00am 01/01/01 to 11:59:59pm 12/31/9999
-            DateSpan var_datespan = null; // n bytes, from -10675199.02:48:05.4775808 to 10675199.02:48:05.47758076
+            DateTime var_datetime = DateTime.Now; // 8 bytes, from 00:00:00am 01/01/01 to 11:59:59pm 12/31/9999
+            //DateSpan var_datespan = null; // n bytes, from -10675199.02:48:05.4775808 to 10675199.02:48:05.47758076
 
-            Console.WriteLine("DateTime : " + var_datetime + " DateSpan : " + var_datespan);
+            Console.WriteLine("DateTime : " + var_datetime /*+ " DateSpan : " + var_datespan*/);
         }
     }
 }

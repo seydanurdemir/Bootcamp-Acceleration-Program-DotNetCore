@@ -70,6 +70,9 @@ namespace VariablesDataTypes
 
             int newint20 = int20 + Convert.ToInt32(str20);
             Console.WriteLine(newint20);
+
+            int newnewint20 = int20 + int.Parse(str20);
+            Console.WriteLine(newnewint20);
         }
     }
 }

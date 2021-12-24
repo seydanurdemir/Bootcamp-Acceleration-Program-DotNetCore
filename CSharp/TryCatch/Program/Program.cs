@@ -18,9 +18,22 @@ namespace Program
 
                 Console.WriteLine("Try : Result is " + c + ".");
             }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine(ex);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Catch :  Error. " + ex.Message);
+                Console.WriteLine(ex);
             }
             finally
             {

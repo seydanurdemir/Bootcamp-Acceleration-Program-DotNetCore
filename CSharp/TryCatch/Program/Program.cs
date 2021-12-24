@@ -8,13 +8,15 @@ namespace Program
         {
             try
             {
+                Console.Write("Enter number a : ");
                 int a = int.Parse(Console.ReadLine());
 
+                Console.Write("Enter number b : ");
                 int b = int.Parse(Console.ReadLine());
 
                 int c = a + b;
 
-                Console.WriteLine("Try" + c);
+                Console.WriteLine("Try : Result is " + c + ".");
             }
             catch (Exception ex)
             {

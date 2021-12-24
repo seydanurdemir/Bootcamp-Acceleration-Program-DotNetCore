@@ -1,5 +1,7 @@
 ﻿using System;
 
+// https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions
+
 namespace Program
 {
     class Program

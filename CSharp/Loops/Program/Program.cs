@@ -23,7 +23,7 @@ namespace Program
                 {
                     if (i % 2 == 1)
                     {
-                        Console.Write("(Tek : " + i + " ) ");
+                        Console.WriteLine(i);
                         tekToplam += i;
                     }
                 }

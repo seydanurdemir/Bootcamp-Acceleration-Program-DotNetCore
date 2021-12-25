@@ -6,12 +6,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             // if - else if - else
             Console.WriteLine();
-
-            Console.WriteLine("If - Else If - Else\n");
+            Console.WriteLine("If - Else If - Else");
+            Console.WriteLine();
 
             int h = DateTime.Now.Hour;
 
@@ -30,8 +28,8 @@ namespace Program
 
             // ternary if
             Console.WriteLine();
-
-            Console.WriteLine("Ternary If\n");
+            Console.WriteLine("Ternary If");
+            Console.WriteLine();
 
             int d = DateTime.Now.Day;
 
@@ -41,8 +39,8 @@ namespace Program
 
             // switch - case - default
             Console.WriteLine();
-
-            Console.WriteLine("Switch - Case - Default\n");
+            Console.WriteLine("Switch - Case - Default");
+            Console.WriteLine();
 
             int m = DateTime.Now.Minute;
 
@@ -65,7 +63,7 @@ namespace Program
                     break;
             }
 
-
+            Console.WriteLine();
         }
     }
 }

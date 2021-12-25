@@ -6,7 +6,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Arithmetic Operators\n");
+            Console.WriteLine();
+            Console.WriteLine("Arithmetic Operators");
+            Console.WriteLine();
+
             Console.WriteLine("Addition (+)");
             Console.WriteLine("Subtraction (-)");
             Console.WriteLine("Multiplication (*)");
@@ -16,8 +19,9 @@ namespace Program
             Console.WriteLine("Decrement (--)");
 
             Console.WriteLine();
+            Console.WriteLine("Relational Operators");
+            Console.WriteLine();
 
-            Console.WriteLine("Relational Operators\n");
             Console.WriteLine("Greater than (>)");
             Console.WriteLine("Less than (<)");
             Console.WriteLine("Equal to (==)");
@@ -26,8 +30,9 @@ namespace Program
             Console.WriteLine("Not equal (!=)");
 
             Console.WriteLine();
+            Console.WriteLine("Assignment Operators");
+            Console.WriteLine();
 
-            Console.WriteLine("Assignment Operators\n");
             Console.WriteLine("Equals to (=)");
             Console.WriteLine("Add equal to (+=)");
             Console.WriteLine("Subtract equal to (-=)");
@@ -36,11 +41,14 @@ namespace Program
             Console.WriteLine("Modulus equal to (%=)");
 
             Console.WriteLine();
+            Console.WriteLine("Logical Operators");
+            Console.WriteLine();
 
-            Console.WriteLine("Logical Operators\n");
             Console.WriteLine("And (&&)");
             Console.WriteLine("Or (||)");
             Console.WriteLine("Not (!)");
+
+            Console.WriteLine();
         }
     }
 }

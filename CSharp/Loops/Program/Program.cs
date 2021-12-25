@@ -10,26 +10,27 @@ namespace Program
 
             try
             {
-                Console.WriteLine("Bir sayi giriniz : ");
+                Console.WriteLine();
+
+                Console.WriteLine("For\n");
+
+                Console.Write("Bir sayi giriniz : ");
                 int sayi = int.Parse(Console.ReadLine());
 
                 int tekToplam = 0;
-                int ciftToplam = 0;
 
                 for (int i = 1; i <= sayi; i++)
                 {
                     if (i % 2 == 1)
                     {
+                        Console.Write("(Tek : " + i + " ) ");
                         tekToplam += i;
-                    }
-                    else
-                    {
-                        ciftToplam += i;
                     }
                 }
 
-                Console.WriteLine("1 ile " + sayi + " arasindaki tek sayilarin toplami : " + tekToplam);
-                Console.WriteLine("1 ile " + sayi + " arasindaki cift sayilarin toplami : " + ciftToplam);
+                Console.WriteLine();
+
+                Console.WriteLine("\n1 ile " + sayi + " arasindaki tek sayilarin toplami : " + tekToplam);
             }
             catch (Exception ex)
             {
@@ -37,7 +38,7 @@ namespace Program
             }
             finally
             {
-                Console.WriteLine("Calculated");
+                Console.WriteLine("\nCalculated\n");
             }
 
         }

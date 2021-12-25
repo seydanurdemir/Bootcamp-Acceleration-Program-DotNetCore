@@ -14,7 +14,7 @@ namespace ConsoleProgramming
             Console.WriteLine("Soyisminizi Giriniz : ");
             string surname = Console.ReadLine();
 
-            Console.WriteLine("Merhaba " + name + " " + surname + " !");
+            Console.WriteLine("Merhaba " + name + " " + surname + " ! ");
         }
     }
 }

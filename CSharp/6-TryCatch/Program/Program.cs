@@ -6,6 +6,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine();
+            Console.WriteLine("Try - Catch - Finally");
+            Console.WriteLine();
+
             try
             {
                 Console.Write("Enter number a : ");
@@ -39,6 +43,8 @@ namespace Program
             {
                 Console.WriteLine("Finally : Completed.");
             }
+
+            Console.WriteLine();
         }
     }
 }

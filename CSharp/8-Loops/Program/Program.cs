@@ -6,43 +6,29 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine();
+            Console.WriteLine("For");
+            Console.WriteLine();
 
-            try
+            Console.Write("Bir sayi giriniz : ");
+            int sayi = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            int tekToplam = 0;
+
+            for (int i = 1; i <= sayi; i++)
             {
-                Console.WriteLine();
-
-                Console.WriteLine("For\n");
-
-                Console.Write("Bir sayi giriniz : ");
-                int sayi = int.Parse(Console.ReadLine());
-
-                Console.WriteLine();
-
-                int tekToplam = 0;
-
-                for (int i = 1; i <= sayi; i++)
+                if (i % 2 == 1)
                 {
-                    if (i % 2 == 1)
-                    {
-                        Console.WriteLine(i);
-                        tekToplam += i;
-                    }
+                    Console.WriteLine(i);
+                    tekToplam += i;
                 }
-
-                Console.WriteLine();
-
-                Console.WriteLine("1 ile " + sayi + " arasindaki tek sayilarin toplami : " + tekToplam);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.WriteLine("\nCalculated\n");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("1 ile " + sayi + " arasindaki tek sayilarin toplami : " + tekToplam);
+
+            Console.WriteLine();
         }
     }
 }

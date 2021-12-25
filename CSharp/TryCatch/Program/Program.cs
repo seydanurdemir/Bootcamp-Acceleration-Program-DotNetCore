@@ -24,7 +24,7 @@ namespace Program
             }
             catch (FormatException ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Message);
             }
             catch (OverflowException ex)
             {

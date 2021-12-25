@@ -8,9 +8,9 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
-            Console.WriteLine("Implicit Conversion\n");
+            Console.WriteLine();
+            Console.WriteLine("Implicit Conversion");
+            Console.WriteLine();
 
             Console.WriteLine("int >> long");
             int num = 2147483647;
@@ -24,8 +24,8 @@ namespace Program
             // UnSafeCast.Test1(new Reptile());
 
             Console.WriteLine();
-
-            Console.WriteLine("Explicit Conversion\n");
+            Console.WriteLine("Explicit Conversion");
+            Console.WriteLine();
 
             Console.WriteLine("double >> (int)double");
             double x = 1234.7;
@@ -42,16 +42,15 @@ namespace Program
             // UnSafeCast.Test2(new Animal());
 
             Console.WriteLine();
-
-            Console.WriteLine("ToString, Convert, ToInt32, Parse\n");
+            Console.WriteLine("ToString, Convert, ToInt32, Parse");
+            Console.WriteLine();
 
             Console.WriteLine("ToString");
-
             Console.WriteLine("Convert");
-
             Console.WriteLine("ToInt32");
-
             Console.WriteLine("Parse");
+
+            Console.WriteLine();
         }
     }
 }

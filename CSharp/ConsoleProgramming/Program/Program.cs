@@ -6,15 +6,19 @@ namespace ConsoleProgramming
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine();
+            Console.WriteLine("Console Programming");
+            Console.WriteLine();
 
-            Console.WriteLine("Isminizi Giriniz : ");
+            Console.Write("Isminizi Giriniz : ");
             string name = Console.ReadLine();
 
-            Console.WriteLine("Soyisminizi Giriniz : ");
+            Console.Write("Soyisminizi Giriniz : ");
             string surname = Console.ReadLine();
 
-            Console.WriteLine("Merhaba " + name + " " + surname + " ! ");
+            Console.WriteLine();
+            Console.WriteLine("Merhaba " + name + " " + surname + " !");
+            Console.WriteLine();
         }
     }
 }

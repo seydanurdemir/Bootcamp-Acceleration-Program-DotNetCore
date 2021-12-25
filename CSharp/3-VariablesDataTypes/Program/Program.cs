@@ -11,7 +11,9 @@ namespace VariablesDataTypes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("{0,-20} {1,-20} {2,-30} {3,-30}\n", "Data Type", "Content", "Min Value", "Max Value");
+            Console.WriteLine();
+            Console.WriteLine("{0,-20} {1,-20} {2,-30} {3,-30}", "Data Type", "Content", "Min Value", "Max Value");
+            Console.WriteLine();
 
             sbyte var_sbyte = 1; // 1 byte, 8 bits, from -128 to 127
             Console.WriteLine("{0,-20} {1,-20} {2,-30} {3,-30}", "sbyte", var_sbyte, sbyte.MinValue, sbyte.MaxValue);
@@ -65,8 +67,8 @@ namespace VariablesDataTypes
             //Console.WriteLine("DateSpan : " + var_datespan);
 
             Console.WriteLine();
-
-            Console.WriteLine("ToString, Convert, ToInt32, Parse\n");
+            Console.WriteLine("ToString, Convert, ToInt32, Parse");
+            Console.WriteLine();
 
             int int20 = 20;
             string str20 = "20";
@@ -84,12 +86,14 @@ namespace VariablesDataTypes
             Console.WriteLine("Parse    : " + newnewint20);
 
             Console.WriteLine();
-
-            Console.WriteLine("Formatted DateTime\n");
+            Console.WriteLine("Formatted DateTime");
+            Console.WriteLine();
 
             Console.WriteLine(DateTime.Now.ToString("dd.MM.yyyy"));
             Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
             Console.WriteLine(DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+
+            Console.WriteLine();
         }
     }
 }

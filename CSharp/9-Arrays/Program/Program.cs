@@ -95,7 +95,8 @@ namespace Program
             Print<int>("nums3", nums3);
 
             Console.WriteLine();
-            Console.WriteLine("4 Clone");
+            Console.WriteLine("4 Clone ***");
+            Print<int>("nums3", nums3);
             int[] nums4 = (int[])nums3.Clone();
             Print<int>("nums4", nums4);
 
@@ -109,10 +110,10 @@ namespace Program
 
             Console.WriteLine();
             Console.WriteLine("6 ConvertAll");
-            char[] chars6 = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
-            Print<char>("chars6", chars6);
-            int[] nums6 = new int[chars6.Length];
-            nums6 = Array.ConvertAll<char, int>(chars6, new Converter<char, int>(Convert.ToInt32));
+            char[] chrs6 = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' };
+            Print<char>("chrs6", chrs6);
+            int[] nums6 = new int[chrs6.Length];
+            nums6 = Array.ConvertAll<char, int>(chrs6, new Converter<char, int>(Convert.ToInt32));
             Print<int>("nums6", nums6);
 
             Console.WriteLine();
@@ -124,7 +125,7 @@ namespace Program
             Print<int>("nums7", nums7);
 
             Console.WriteLine();
-            Console.WriteLine("8 CopyTo");
+            Console.WriteLine("8 CopyTo ***");
             Print<int>("nums7", nums7);
             int[] nums8 = new int[nums7.Length + 5];
             nums7.CopyTo(nums8, 3);
@@ -132,103 +133,148 @@ namespace Program
 
             Console.WriteLine();
             Console.WriteLine("9 Create Instance");
-            int[] nums9 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums9);
+            Array nums9 = Array.CreateInstance(typeof(int), 10);
+            int i9 = 0;
+            for (i9 = 0; i9 < 10; i9++)
+            {
+                nums9.SetValue(i9, i9);
+            }
+            System.Collections.IEnumerator enum9 = nums9.GetEnumerator();
+            Console.Write("nums9 : ");
+            while ((enum9.MoveNext()) && (enum9.Current != null))
+            {
+                Console.Write(enum9.Current + " ");
+            }
+            Console.WriteLine();
 
             Console.WriteLine();
             Console.WriteLine("10 Empty");
             int[] nums10 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums10);
+            Print<int>("nums10", nums10);
+            nums10 = Array.Empty<int>();
+            Print<int>("nums10", nums10);
 
             Console.WriteLine();
             Console.WriteLine("11 Exists");
             int[] nums11 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums11);
+            Print<int>("nums11", nums11);
+            Console.WriteLine("Does 7 exist in the array?");
+            bool res11 = Array.Exists<int>(nums11, el => (el == 7));
+            Console.WriteLine("res11 : " + res11);
 
             Console.WriteLine();
             Console.WriteLine("12 Fill");
             int[] nums12 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums12);
+            Print<int>("nums12", nums12);
+            Array.Fill<int>(nums12, 1, 7, 3);
+            Print<int>("nums12", nums12);
 
             Console.WriteLine();
             Console.WriteLine("13 Find");
-            int[] nums13 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums13);
+            int[] nums13 = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+            Print<int>("nums13", nums13);
+            int el13 = Array.Find<int>(nums13, el => ((el != 0) && ((el % 3) == 0)));
+            Console.WriteLine("el13 : " + el13);
 
             Console.WriteLine();
             Console.WriteLine("14 FindAll");
-            int[] nums14 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums14);
+            Print<int>("nums13", nums13);
+            int[] nums14 = Array.FindAll<int>(nums13, el => ((el != 0) && ((el % 3) == 0)));
+            Print<int>("nums14", nums14);
 
             Console.WriteLine();
             Console.WriteLine("15 FindIndex");
-            int[] nums15 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums15);
+            Print<int>("nums13", nums13);
+            int i15 = Array.FindIndex<int>(nums13, el => ((el != 0) && ((el % 3) == 0)));
+            Console.WriteLine("i15 : " + i15);
 
             Console.WriteLine();
             Console.WriteLine("16 FindLast");
-            int[] nums16 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums16);
+            Print<int>("nums13", nums13);
+            int el16 = Array.FindLast<int>(nums13, el => ((el != 0) && ((el % 3) == 0)));
+            Console.WriteLine("el16 : " + el16);
 
             Console.WriteLine();
             Console.WriteLine("17 FindLastIndex");
-            int[] nums17 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums17);
+            Print<int>("nums13", nums13);
+            int i17 = Array.FindLastIndex<int>(nums13, el => ((el != 0) && ((el % 3) == 0)));
+            Console.WriteLine("i17 : " + i17);
 
             Console.WriteLine();
             Console.WriteLine("18 ForEach");
             int[] nums18 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums18);
+            Print<int>("nums18", nums18);
+            Console.Write("el18 : ");
+            Array.ForEach<int>(nums18, el => { if ((el % 3) == 0) Console.Write(el + " "); });
+            Console.WriteLine();
 
             Console.WriteLine();
-            Console.WriteLine("19 GetEnumerator");
+            Console.WriteLine("19 GetEnumerator ***");
             int[] nums19 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums19);
+            Print<int>("nums19", nums19);
+            System.Collections.IEnumerator enum19 = nums19.GetEnumerator();
+            Console.Write("nums19 : ");
+            while ((enum19.MoveNext()) && (enum19.Current != null))
+            {
+                Console.Write(enum19.Current + " ");
+            }
+            Console.WriteLine();
 
             Console.WriteLine();
-            Console.WriteLine("20 GetLength");
+            Console.WriteLine("20 GetLength ***");
             int[] nums20 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums20);
+            Print<int>("nums20", nums20);
+            Console.WriteLine("len20 : " + nums20.GetLength(0));
 
             Console.WriteLine();
-            Console.WriteLine("21 GetLongLength");
-            int[] nums21 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums21);
+            Console.WriteLine("21 GetLongLength ***");
+            Print<int>("nums20", nums20);
+            Console.WriteLine("len21 : " + nums20.GetLongLength(0));
 
             Console.WriteLine();
-            Console.WriteLine("22 GetLowerBound");
-            int[] nums22 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums22);
+            Console.WriteLine("22 GetLowerBound ***");
+            Print<int>("nums20", nums20);
+            Console.WriteLine("lower22 : " + nums20.GetLowerBound(0));
 
             Console.WriteLine();
-            Console.WriteLine("23 GetUpperBound");
-            int[] nums23 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums23);
+            Console.WriteLine("23 GetUpperBound ***");
+            Print<int>("nums20", nums20);
+            Console.WriteLine("upper23 : " + nums20.GetUpperBound(0));
 
             Console.WriteLine();
-            Console.WriteLine("24 GetValue");
-            int[] nums24 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums24);
+            Console.WriteLine("24 GetValue ***");
+            Print<int>("nums20", nums20);
+            Console.WriteLine("value24 : " + nums20.GetValue(5));
 
             Console.WriteLine();
             Console.WriteLine("25 IndexOf");
-            int[] nums25 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums25);
+            int[] nums25 = { 0, 1, 2, 0, 1, 2, 0, 1, 2, 0 };
+            Print<int>("nums25", nums25);
+            Console.WriteLine("i25 : " + Array.IndexOf<int>(nums25, 0, 4, 6));
 
             Console.WriteLine();
             Console.WriteLine("26 Initialize");
-            int[] nums26 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums26);
+            Array nums26 = Array.CreateInstance(typeof(int), 10);
+            nums26.Initialize();
+            System.Collections.IEnumerator enum26 = nums26.GetEnumerator();
+            Console.Write("nums26 : ");
+            while ((enum26.MoveNext()) && (enum26.Current != null))
+            {
+                Console.Write(enum26.Current + " ");
+            }
+            Console.WriteLine();
 
             Console.WriteLine();
             Console.WriteLine("27 LastIndexOf");
-            int[] nums27 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums27);
+            Print<int>("nums25", nums25);
+            Console.WriteLine("i27 : " + Array.LastIndexOf<int>(nums25, 0, 9, 5));
 
             Console.WriteLine();
             Console.WriteLine("28 Resize");
             int[] nums28 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums28);
+            Print<int>("nums28", nums28);
+            Array.Resize<int>(ref nums28, 5);
+            Print<int>("nums28", nums28);
 
             Console.WriteLine();
             Console.WriteLine("29 Reverse");

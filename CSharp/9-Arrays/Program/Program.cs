@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Collections.Generic;
 
+// https://docs.microsoft.com/en-us/dotnet/api/system.array?view=net-6.0
+
 namespace Program
 {
     class Program
@@ -253,7 +255,7 @@ namespace Program
             Console.WriteLine("i25 : " + Array.IndexOf<int>(nums25, 0, 4, 6));
 
             Console.WriteLine();
-            Console.WriteLine("26 Initialize");
+            Console.WriteLine("26 Initialize ***");
             Array nums26 = Array.CreateInstance(typeof(int), 10);
             nums26.Initialize();
             System.Collections.IEnumerator enum26 = nums26.GetEnumerator();
@@ -278,23 +280,35 @@ namespace Program
 
             Console.WriteLine();
             Console.WriteLine("29 Reverse");
-            int[] nums29 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums29);
+            string str29 = "palindrome";
+            char[] chrs29 = str29.ToCharArray();
+            Print<char>("chrs29", chrs29);
+            Array.Reverse<char>(chrs29);
+            Print<char>("chrs29", chrs29);
 
             Console.WriteLine();
             Console.WriteLine("30 SetValue");
-            int[] nums30 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums30);
+            Print<int>("nums20", nums20);
+            nums20.SetValue(5000, 5);
+            Print<int>("nums20", nums20);
 
             Console.WriteLine();
             Console.WriteLine("31 Sort");
-            int[] nums31 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums31);
+            int[] nums31 = { 7, 1, 9, 3, 0, 8, 5, 6, 4, 2 };
+            Print<int>("nums31", nums31);
+            Array.Sort<int>(nums31);
+            Print<int>("nums31", nums31);
 
             Console.WriteLine();
             Console.WriteLine("32 TrueForAll");
-            int[] nums32 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums32);
+            int[] nums32 = new int[10];
+            Print<int>("nums32", nums32);
+            Console.WriteLine("Are all elements zero in the array?");
+            Console.WriteLine(Array.TrueForAll(nums32, el => (el == 0)));
+            nums32.SetValue(9, 9);
+            Print<int>("nums32", nums32);
+            Console.WriteLine("Are all elements zero in the array?");
+            Console.WriteLine(Array.TrueForAll(nums32, el => (el == 0)));
 
             Console.WriteLine();
         }

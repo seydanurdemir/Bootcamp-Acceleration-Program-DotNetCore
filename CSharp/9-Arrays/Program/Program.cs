@@ -125,8 +125,10 @@ namespace Program
 
             Console.WriteLine();
             Console.WriteLine("8 CopyTo");
-            int[] nums8 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            Print<int>("", nums8);
+            Print<int>("nums7", nums7);
+            int[] nums8 = new int[nums7.Length + 5];
+            nums7.CopyTo(nums8, 3);
+            Print<int>("nums8", nums8);
 
             Console.WriteLine();
             Console.WriteLine("9 Create Instance");

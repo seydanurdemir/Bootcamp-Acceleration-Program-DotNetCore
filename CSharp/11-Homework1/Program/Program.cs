@@ -107,6 +107,29 @@ namespace Program
 
         public static void Part4()
         {
+            Console.WriteLine("Taking Sentences");
+            Console.WriteLine();
+
+            Console.WriteLine("(Please do not use punctuations!)");
+            Console.Write("Sentences : ");
+            string str = Console.ReadLine();
+
+            string[] words = str.Split(" ");
+            int word = words.Length;
+            char[] letters = string.Join("", str.Split(" ")).ToCharArray();
+            int letter = letters.Length;
+
+            Console.WriteLine();
+            Console.WriteLine("Printing Word Count");
+            Console.WriteLine();
+
+            Console.WriteLine("Word Count : " + word);
+
+            Console.WriteLine();
+            Console.WriteLine("Printing Letter Count");
+            Console.WriteLine();
+
+            Console.WriteLine("Letter Count : " + letter);
         }
     }
 
@@ -119,25 +142,25 @@ namespace Program
             Console.WriteLine();
 
             Console.WriteLine();
-            Console.WriteLine("Part 1");
+            Console.WriteLine("Part 1 --------------------");
             Console.WriteLine();
 
-            //Homework1.Part1();
+            Homework1.Part1();
 
             Console.WriteLine();
-            Console.WriteLine("Part 2");
+            Console.WriteLine("Part 2 --------------------");
             Console.WriteLine();
 
-            //Homework1.Part2();
+            Homework1.Part2();
 
             Console.WriteLine();
-            Console.WriteLine("Part 3");
+            Console.WriteLine("Part 3 --------------------");
             Console.WriteLine();
 
-            //Homework1.Part3();
+            Homework1.Part3();
 
             Console.WriteLine();
-            Console.WriteLine("Part 4");
+            Console.WriteLine("Part 4 --------------------");
             Console.WriteLine();
 
             Homework1.Part4();

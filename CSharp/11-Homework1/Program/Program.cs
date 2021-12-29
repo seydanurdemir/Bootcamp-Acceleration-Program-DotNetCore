@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Program
 {
@@ -110,25 +111,23 @@ namespace Program
             Console.WriteLine("Taking Sentences");
             Console.WriteLine();
 
-            Console.WriteLine("(Please do not use punctuations!)");
             Console.Write("Sentences : ");
             string str = Console.ReadLine();
-
-            string[] words = str.Split(" ");
-            int word = words.Length;
-            char[] letters = string.Join("", str.Split(" ")).ToCharArray();
-            int letter = letters.Length;
 
             Console.WriteLine();
             Console.WriteLine("Printing Word Count");
             Console.WriteLine();
 
+            string[] words = Regex.Replace(str, @"[^\w\s]", "").Split(" ");
+            int word = words.Length;
             Console.WriteLine("Word Count : " + word);
 
             Console.WriteLine();
             Console.WriteLine("Printing Letter Count");
             Console.WriteLine();
 
+            char[] letters = string.Join("", Regex.Replace(str, @"[^\w\s]", "").Split(" ")).ToCharArray();
+            int letter = letters.Length;
             Console.WriteLine("Letter Count : " + letter);
         }
     }

@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Text;
+
+// https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0
+// https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0
 
 namespace Program
 {
@@ -27,6 +29,7 @@ namespace Program
             string str12 = "CaMeL";
             string str13 = "... how, do you, feel ?! ...";
             char[] chars2 = { '.', ',', '?', '!', ' ' };
+
             Console.WriteLine(" 1. Compare ({0}, {1}) : {2}", str1, str2, String.Compare(str1, str2));
             Console.WriteLine(" 3. CompareTo ({0}, {1}) : {2} ***", str1, str2, str1.CompareTo(str2));
             Console.WriteLine(" 4. Concat ({0}, {1}) : {2}", str1, str2, String.Concat(str1, str2));
@@ -53,10 +56,28 @@ namespace Program
             Console.WriteLine("42. ToUpper ({0}) : {1} ***", str2, str12.ToUpper());
             Console.WriteLine("44. Trim ({0}) : {1} ***", str13, str13.Trim(chars2));
 
-
             Console.WriteLine();
             Console.WriteLine("DateTime Methods");
             Console.WriteLine();
+
+            Console.WriteLine("Now : " + DateTime.Now);
+            Console.WriteLine("ToLongDateString : " + DateTime.Now.ToLongDateString());
+            Console.WriteLine("ToShortDateString : " + DateTime.Now.ToShortDateString());
+            Console.WriteLine("ToLongTimeString : " + DateTime.Now.ToLongTimeString());
+            Console.WriteLine("ToShortTimeString : " + DateTime.Now.ToShortTimeString());
+
+            Console.WriteLine("Date : " + DateTime.Now.Date);
+            Console.WriteLine("DayOfWeek : " + DateTime.Now.DayOfWeek);
+            Console.WriteLine("DayOfYear : " + DateTime.Now.DayOfYear);
+
+            Console.WriteLine("Year : " + DateTime.Now.Year);
+            Console.WriteLine("Month : " + DateTime.Now.Month);
+            Console.WriteLine("Day : " + DateTime.Now.Day);
+
+            Console.WriteLine("Hour : " + DateTime.Now.Hour);
+            Console.WriteLine("Minute : " + DateTime.Now.Minute);
+            Console.WriteLine("Second : " + DateTime.Now.Second);
+            Console.WriteLine("Millisecond : " + DateTime.Now.Millisecond);
 
             Console.WriteLine();
         }

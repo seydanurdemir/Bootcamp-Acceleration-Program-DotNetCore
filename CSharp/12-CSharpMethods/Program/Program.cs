@@ -2,6 +2,7 @@
 
 // https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0
 // https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0
+// https://docs.microsoft.com/en-us/dotnet/api/system.math?view=net-6.0
 
 namespace Program
 {
@@ -78,6 +79,10 @@ namespace Program
             Console.WriteLine("Minute : " + DateTime.Now.Minute);
             Console.WriteLine("Second : " + DateTime.Now.Second);
             Console.WriteLine("Millisecond : " + DateTime.Now.Millisecond);
+
+            Console.WriteLine();
+            Console.WriteLine("Math Methods");
+            Console.WriteLine();
 
             Console.WriteLine();
         }

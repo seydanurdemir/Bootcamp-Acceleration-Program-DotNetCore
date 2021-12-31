@@ -8,6 +8,11 @@ namespace Program
 {
     class Program
     {
+        public static double AngRadDeg(double degrees)
+        {
+            double angle = Math.PI * degrees / 180.0;
+            return angle;
+        }
         static void Main(string[] args)
         {
             Console.WriteLine();
@@ -61,28 +66,128 @@ namespace Program
             Console.WriteLine("DateTime Methods");
             Console.WriteLine();
 
-            Console.WriteLine("Now : " + DateTime.Now);
-            Console.WriteLine("ToLongDateString : " + DateTime.Now.ToLongDateString());
-            Console.WriteLine("ToShortDateString : " + DateTime.Now.ToShortDateString());
-            Console.WriteLine("ToLongTimeString : " + DateTime.Now.ToLongTimeString());
-            Console.WriteLine("ToShortTimeString : " + DateTime.Now.ToShortTimeString());
+            Console.WriteLine("{0,-20}   {1,0}", "Member", "Result");
+            Console.WriteLine("{0,-20}   {1,0}", "------", "------");
 
-            Console.WriteLine("Date : " + DateTime.Now.Date);
-            Console.WriteLine("DayOfWeek : " + DateTime.Now.DayOfWeek);
-            Console.WriteLine("DayOfYear : " + DateTime.Now.DayOfYear);
+            Console.WriteLine("{0,-20} : {1,0}", "Now", DateTime.Now);
+            Console.WriteLine();
 
-            Console.WriteLine("Year : " + DateTime.Now.Year);
-            Console.WriteLine("Month : " + DateTime.Now.Month);
-            Console.WriteLine("Day : " + DateTime.Now.Day);
+            Console.WriteLine("{0,-20} : {1,0}", "Date", DateTime.Now.Date);
+            Console.WriteLine("{0,-20} : {1,0}", "ToLongDateString", DateTime.Now.ToLongDateString());
+            Console.WriteLine("{0,-20} : {1,0}", "ToShortDateString", DateTime.Now.ToShortDateString());
+            Console.WriteLine("{0,-20} : {1,0}", "ToLongTimeString", DateTime.Now.ToLongTimeString());
+            Console.WriteLine("{0,-20} : {1,0}", "ToShortTimeString", DateTime.Now.ToShortTimeString());
+            Console.WriteLine();
 
-            Console.WriteLine("Hour : " + DateTime.Now.Hour);
-            Console.WriteLine("Minute : " + DateTime.Now.Minute);
-            Console.WriteLine("Second : " + DateTime.Now.Second);
-            Console.WriteLine("Millisecond : " + DateTime.Now.Millisecond);
+            Console.WriteLine("{0,-20} : {1,0}", "DayOfWeek", DateTime.Now.DayOfWeek);
+            Console.WriteLine("{0,-20} : {1,0}", "DayOfYear", DateTime.Now.DayOfYear);
+            Console.WriteLine("{0,-20} : {1,0}", "IsLeapYear", DateTime.IsLeapYear(1994));
+            Console.WriteLine("{0,-20} : {1,0}", "DaysInMonth", DateTime.DaysInMonth(1994, 2));
+            Console.WriteLine("{0,-20} : {1,0}", "IsLeapYear", DateTime.IsLeapYear(1996));
+            Console.WriteLine("{0,-20} : {1,0}", "DaysInMonth", DateTime.DaysInMonth(1996, 2));
+            Console.WriteLine("{0,-20} : {1,0}", "IsDaylightSavingTime", DateTime.Now.IsDaylightSavingTime());
+            Console.WriteLine();
+
+            Console.WriteLine("{0,-20} : {1,0}", "Year", DateTime.Now.Year);
+            Console.WriteLine("{0,-20} : {1,0}", "Month", DateTime.Now.Month);
+            Console.WriteLine("{0,-20} : {1,0}", "Day", DateTime.Now.Day);
+            Console.WriteLine("{0,-20} : {1,0}", "Hour", DateTime.Now.Hour);
+            Console.WriteLine("{0,-20} : {1,0}", "Minute", DateTime.Now.Minute);
+            Console.WriteLine("{0,-20} : {1,0}", "Second", DateTime.Now.Second);
+            Console.WriteLine("{0,-20} : {1,0}", "Millisecond", DateTime.Now.Millisecond);
+            Console.WriteLine();
+
+            Console.WriteLine("{0,-20} : {1,0}", "Add", DateTime.Now.Add(new TimeSpan(10, 0, 0, 0)));
+            Console.WriteLine("{0,-20} : {1,0}", "Subtract", DateTime.Now.Subtract(DateTime.Now.Add(new TimeSpan(10, 0, 0, 0))));
+            Console.WriteLine();
+
+            Console.WriteLine("{0,-20} : {1,0}", "AddYear", DateTime.Now.AddYears(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddMonth", DateTime.Now.AddMonths(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddDay", DateTime.Now.AddDays(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddHour", DateTime.Now.AddHours(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddMinute", DateTime.Now.AddMinutes(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddSecond", DateTime.Now.AddSeconds(1));
+            Console.WriteLine("{0,-20} : {1,0}", "AddMillisecond", DateTime.Now.AddMilliseconds(1));
+            Console.WriteLine();
+
+            Console.WriteLine("{0,-20} : {1,0}", "ToString", DateTime.Now.ToString());
+            Console.WriteLine();
+
+            foreach (string format in DateTime.Now.GetDateTimeFormats())
+            {
+                Console.WriteLine(format);
+            }
 
             Console.WriteLine();
             Console.WriteLine("Math Methods");
             Console.WriteLine();
+
+            Console.WriteLine("{0,-12} {1,-10} {2,-10} {3,-10}", "Method", "Value1", "Value2", "Result");
+            Console.WriteLine("{0,-12} {1,-10} {2,-10} {3,-10}", "------------", "----------", "----------", "----------");
+            Console.WriteLine();
+
+            decimal dec1 = -10.25m;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Abs", "", dec1, Math.Abs(dec1));
+            Console.WriteLine();
+
+            decimal dec2 = 10.50m;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Ceiling", "", dec2, Math.Ceiling(dec2));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Floor", "", dec2, Math.Floor(dec2));
+
+            decimal dec3 = 10.50m;
+            decimal dec4 = 10.51m;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Round", "", dec3, Math.Round(dec3));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Round", "", dec4, Math.Round(dec4));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Truncate", "", dec2, Math.Truncate(dec2));
+            Console.WriteLine();
+
+            int int1 = Int32.MaxValue;
+            int int2 = Int32.MaxValue;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "BigMul", int1, int2, Math.BigMul(int1, int2));
+            int int3 = 3;
+            int int4 = 4;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Pow", int3, int4, Math.Pow(int3, int4));
+            int int5 = 81;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Sqrt", "", int5, Math.Sqrt(int5));
+            Console.WriteLine();
+
+            double dbl1 = 10000;
+            int int6 = 10;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Log", dbl1, int6, Math.Log(dbl1, int6));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Log10", "", dbl1, Math.Log10(dbl1));
+            double dbl2 = 128;
+            int int7 = 2;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Log", dbl2, int7, Math.Log(dbl2, int7));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Log2", "", dbl2, Math.Log2(dbl2));
+            Console.WriteLine();
+
+            int int8 = 20;
+            int int9 = -25;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Max", int8, int9, Math.Max(int8, int9));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "Min", int8, int9, Math.Min(int8, int9));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "MaxMagnitude", int8, int9, Math.MaxMagnitude(int8, int9));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10}", "MinMagnitude", int8, int9, Math.MinMagnitude(int8, int9));
+            Console.WriteLine();
+
+            double dbl3 = 0;
+            double dbl4 = 30;
+            double dbl5 = 45;
+            double dbl6 = 60;
+            double dbl7 = 90;
+            double dbl8 = 180;
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Sin", "", dbl3, Math.Sin(AngRadDeg(dbl3)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Sin", "", dbl4, Math.Sin(AngRadDeg(dbl4)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Sin", "", dbl6, Math.Sin(AngRadDeg(dbl6)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Sin", "", dbl7, Math.Sin(AngRadDeg(dbl7)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Sin", "", dbl8, Math.Sin(AngRadDeg(dbl8)));
+            Console.WriteLine();
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Cos", "", dbl3, Math.Cos(AngRadDeg(dbl3)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Cos", "", dbl4, Math.Cos(AngRadDeg(dbl4)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Cos", "", dbl6, Math.Cos(AngRadDeg(dbl6)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Cos", "", dbl7, Math.Cos(AngRadDeg(dbl7)));
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Cos", "", dbl8, Math.Cos(AngRadDeg(dbl8)));
+            Console.WriteLine();
+            Console.WriteLine("{0,-12} {1,10} {2,10} {3,10:0.00}", "Tan", "", dbl5, Math.Tan(AngRadDeg(dbl5)));
 
             Console.WriteLine();
         }

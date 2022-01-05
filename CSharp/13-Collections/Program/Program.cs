@@ -34,6 +34,7 @@ namespace Program
             {
                 Console.WriteLine(day);
             }
+            Console.WriteLine();
 
             Console.WriteLine("List.Foreach");
             Console.WriteLine();
@@ -72,7 +73,7 @@ namespace Program
             daysList.ForEach(day => Console.WriteLine(day));
             Console.WriteLine();
 
-            Console.WriteLine("BinarySearch Thursday");
+            Console.WriteLine("BinarySearch (Tuesday)");
             Console.WriteLine();
 
             Console.WriteLine(daysList.BinarySearch("Tuesday"));
@@ -211,12 +212,44 @@ namespace Program
             }
             Console.WriteLine();
 
+            Console.WriteLine("Foreach (Keys)");
+            Console.WriteLine();
+
+            foreach (var el in dictList.Keys)
+            {
+                Console.WriteLine(el);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Foreach (Values)");
+            Console.WriteLine();
+
+            foreach (var el in dictList.Values)
+            {
+                Console.WriteLine(el);
+            }
+            Console.WriteLine();
+
             Console.WriteLine("Foreach (Key : Value)");
             Console.WriteLine();
 
             foreach (var el in dictList)
             {
                 Console.WriteLine(el.Key + " : " + el.Value);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Contains Key 191003 " + dictList.ContainsKey(191003));
+            Console.WriteLine("Contains Value Fasulye " + dictList.ContainsValue("Fasulye"));
+            Console.WriteLine();
+
+            Console.WriteLine("Remove with Key");
+            Console.WriteLine();
+
+            dictList.Remove(191003);
+            foreach (var el in dictList)
+            {
+                Console.WriteLine(el);
             }
             Console.WriteLine();
 

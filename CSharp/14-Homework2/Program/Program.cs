@@ -36,6 +36,7 @@ namespace Program
             for (int i = 0; i < size; i++)
             {
                 Console.Write((i + 1) + ". Element : ");
+                // Add control if el is positive integer or not
                 el = int.Parse(Console.ReadLine());
                 if (isPrime(el))
                 {
@@ -103,7 +104,7 @@ namespace Program
         public static void Part2()
         {
             int size = 20;
-            ArrayList numberList = new ArrayList();
+            Array nums = Array.CreateInstance(typeof(int), 20);
 
             Console.WriteLine("Taking " + size + " Elements");
             Console.WriteLine();
@@ -113,27 +114,27 @@ namespace Program
             {
                 Console.Write((i + 1) + ". Element : ");
                 el = int.Parse(Console.ReadLine());
-                numberList.Add(el);
+                nums.SetValue(el, i);
             }
             Console.WriteLine();
 
-            Console.WriteLine("Print List");
+            Console.WriteLine("Print Array");
             Console.WriteLine();
 
-            foreach (var item in numberList)
+            foreach (var item in nums)
             {
                 Console.WriteLine(item);
             }
             Console.WriteLine();
 
-            Console.WriteLine("Sorting & Reversing List");
+            Console.WriteLine("Sorting & Reversing Array");
             Console.WriteLine();
 
             int min1, min2, min3, minAvg;
-            numberList.Sort();
-            min1 = (int)numberList[0];
-            min2 = (int)numberList[1];
-            min3 = (int)numberList[2];
+            Array.Sort(nums);
+            min1 = (int)nums.GetValue(0);
+            min2 = (int)nums.GetValue(1);
+            min3 = (int)nums.GetValue(2);
             minAvg = ((min1 + min2 + min3) / 3);
 
             Console.WriteLine("Minimum 1 : " + min1);
@@ -145,10 +146,10 @@ namespace Program
             Console.WriteLine();
 
             int max1, max2, max3, maxAvg;
-            numberList.Reverse();
-            max1 = (int)numberList[0];
-            max2 = (int)numberList[1];
-            max3 = (int)numberList[2];
+            Array.Reverse(nums);
+            max1 = (int)nums.GetValue(0);
+            max2 = (int)nums.GetValue(1);
+            max3 = (int)nums.GetValue(2);
             maxAvg = ((max1 + max2 + max3) / 3);
 
             Console.WriteLine("Maximum 1 : " + max1);
